@@ -15,6 +15,9 @@ import Geography from "./scenes/geography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
+import Pathum from "./scenes/Pathum/pathum";
+import Shanilka from "./scenes/Shanilka/shanilka";
+import Geethmani from "./scenes/Geethmani/geethmani";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -33,6 +36,9 @@ function App() {
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
+              <Route path="/pathum" element={<Pathum />} />
+              <Route path="/shanilka" element={<Shanilka />} />
+              <Route path="/geethmani" element={<Geethmani />} />
               <Route path="/form" element={<Form />} />
               <Route path="/bar" element={<Bar />} />
               <Route path="/pie" element={<Pie />} />
