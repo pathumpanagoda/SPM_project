@@ -12,7 +12,7 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
-import riceImg from "../../assets/riceImg2.jpg";
+import riceImg from "../../assets/riceImg3.jpg";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -23,7 +23,7 @@ const Dashboard = () => {
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
-        <img src={riceImg} alt="Description of the image" style={{ display:"flex",position:"absolute", width: '100%',  borderRadius: '8px',zIndex:-1}} />
+        {/* <img src={riceImg} alt="Description of the image" style={{ display:"flex",position:"absolute", width: '100%',  borderRadius: '8px',zIndex:-1,marginLeft:'-50px'}} /> */}
         <Box>
           <Button
             sx={{

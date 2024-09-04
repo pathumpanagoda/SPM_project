@@ -1,13 +1,23 @@
-import { Box } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 const Contacts = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const handleEditClick = (id) => {
+    alert(`Edit button clicked for ID: ${id}`);
+  };
+
+  const handleDeleteClick = (id) => {
+    alert(`Delete button clicked for ID: ${id}`);
+  };
 
   const columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
@@ -46,9 +56,25 @@ const Contacts = () => {
       flex: 1,
     },
     {
-      field: "zipCode",
-      headerName: "Zip Code",
+      field: "action",
+      headerName: "Action",
       flex: 1,
+      renderCell: (params) => (
+        <Box>
+          <IconButton
+            color="secondary"
+            onClick={() => handleEditClick(params.row.id)}
+          >
+            <EditIcon />
+          </IconButton>
+          <IconButton
+            color="secondary"
+            onClick={() => handleDeleteClick(params.row.id)}
+          >
+            <DeleteOutlineIcon />
+          </IconButton>
+        </Box>
+      ),
     },
   ];
 
